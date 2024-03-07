@@ -30,6 +30,13 @@ var_dump('FUNZIONO')
 </head>
 
 <body>
+    <form action="" method="get">
+        <label for="inputNumber">Choose the length of your new password (4 to 8 characters)</label>
+        <input type="number" id="inputNumber" name="inputNumber" min="4" max="8">
+        <button type="submit">Generate password</button>
+    </form>
+
+
 
 </body>
 
