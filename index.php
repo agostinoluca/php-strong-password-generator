@@ -15,10 +15,12 @@ Verificato il corretto funzionamento del nostro codice, spostiamo la logica in u
 // var_dump('FUNZIONO')
 $inputNumber = $_GET['inputNumber'];
 $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&*+,-.:;<>?[@]^_~';
+$newPassword = "";
 for ($i = 0; $i < $inputNumber; $i++) {
     $randomIndex = rand(0, strlen($characters) - 1);
     $randomCharacter = $characters[$randomIndex];
-    var_dump($randomCharacter);
+    $newPassword .= $randomCharacter;
+    var_dump($newPassword);
 }
 
 ?>
@@ -42,7 +44,7 @@ for ($i = 0; $i < $inputNumber; $i++) {
         <input type="number" id="inputNumber" name="inputNumber" min="4" max="8">
         <button type="submit">Generate password</button>
     </form>
-
+    <h1><?php echo $newPassword ?></h1>
 
 
 </body>
