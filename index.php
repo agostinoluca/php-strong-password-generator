@@ -14,7 +14,12 @@ Verificato il corretto funzionamento del nostro codice, spostiamo la logica in u
 
 // var_dump('FUNZIONO')
 $inputNumber = $_GET['inputNumber'];
-var_dump($inputNumber);
+$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&*+,-.:;<>?[@]^_~';
+for ($i = 0; $i < $inputNumber; $i++) {
+    $randomIndex = rand(0, strlen($characters) - 1);
+    $randomCharacter = $characters[$randomIndex];
+    var_dump($randomCharacter);
+}
 
 ?>
 
