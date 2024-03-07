@@ -12,7 +12,9 @@ Milestone 2
 Verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file functions.php che includeremo poi nella pagina principale
 */
 
-var_dump('FUNZIONO')
+// var_dump('FUNZIONO')
+$inputNumber = $_GET['inputNumber'];
+var_dump($inputNumber);
 
 ?>
 
