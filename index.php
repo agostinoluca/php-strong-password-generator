@@ -20,7 +20,6 @@ for ($i = 0; $i < $inputNumber; $i++) {
     $randomIndex = rand(0, strlen($characters) - 1);
     $randomCharacter = $characters[$randomIndex];
     $newPassword .= $randomCharacter;
-    var_dump($newPassword);
 }
 
 ?>
@@ -39,12 +38,17 @@ for ($i = 0; $i < $inputNumber; $i++) {
 </head>
 
 <body>
-    <form action="" method="get">
-        <label for="inputNumber">Choose the length of your new password (4 to 8 characters)</label>
-        <input type="number" id="inputNumber" name="inputNumber" min="4" max="8">
-        <button type="submit">Generate password</button>
-    </form>
-    <h1><?php echo $newPassword ?></h1>
+    <div class="container m-auto pt-5">
+        <form action="" method="get" class="d-flex flex-column align-items-center gap-2">
+            <label for="inputNumber">Choose the length of your new password (4 to 8 characters)</label>
+            <input style="width: 50px;" type="number" id="inputNumber" name="inputNumber" min="4" max="8">
+            <button class="btn btn-dark" type="submit">Generate password</button>
+        </form>
+        <div class="d-flex flex-column align-items-center pt-5">
+            <p>Your new strong password:</p>
+            <h6 class="bg-success text-light p-2"><?php echo $newPassword ?></h6>
+        </div>
+    </div>
 
 
 </body>
