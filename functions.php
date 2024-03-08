@@ -1,7 +1,10 @@
 <?php
-function generatePassword($inputNumber)
+function generatePassword($inputNumber, $includeNumbers)
 {
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&*+,-.:;<>?[@]^_~';
+    $characters = '';
+    if ($includeNumbers) {
+        $characters .= '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&*+,-.:;<>?[@]^_~';
+    }
     $newPassword = "";
     for ($i = 0; $i < $inputNumber; $i++) {
         $randomIndex = rand(0, strlen($characters) - 1);
