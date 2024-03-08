@@ -1,5 +1,5 @@
 <?php
-function generatePassword($inputNumber, $includeNumbers, $includeLetters, $includeSymbols)
+function generatePassword($inputNumber, $includeNumbers, $includeLetters, $includeSymbols, $doNotIdenticalCharacters)
 {
     $characters = '';
     if ($includeNumbers) {
@@ -11,6 +11,11 @@ function generatePassword($inputNumber, $includeNumbers, $includeLetters, $inclu
     if ($includeSymbols) {
         $characters .= '!#$%&*+,-.:;<>?[@]^_~';
     }
+
+    if ($doNotIdenticalCharacters) {
+        // logic?
+    }
+
     $newPassword = "";
     for ($i = 0; $i < $inputNumber; $i++) {
         $randomIndex = rand(0, strlen($characters) - 1);

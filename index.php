@@ -27,7 +27,8 @@ if (isset($_GET['inputNumber'])) {
     $includeNumbers = $_GET['includeNumbers'];
     $includeLetters = $_GET['includeLetters'];
     $includeSymbols = $_GET['includeSymbols'];
-    $newPassword = generatePassword($inputNumber, $includeNumbers, $includeLetters, $includeSymbols);
+    $doNotIdenticalCharacters = $_GET['doNotIdenticalCharacters'];
+    $newPassword = generatePassword($inputNumber, $includeNumbers, $includeLetters, $includeSymbols, $doNotIdenticalCharacters);
     $_SESSION['password'] = $newPassword;
     header("Location: ./display_password.php");
 }
@@ -39,10 +40,10 @@ require_once __DIR__ . '/html_head.php';
     <div class="container m-auto pt-5 text-center">
         <h1 class="text-light">Strong Password Generator</h1>
         <form action="" method="get" class="d-flex flex-column align-items-center gap-2 pt-5 ">
-            <label for="inputNumber">Choose the length of your new password (4 to 8 characters)</label>
+            <label for="inputNumber">Choose the length of your new password (4 to 8 characters):</label>
             <input style="width: 50px;" type="number" id="inputNumber" name="inputNumber" min="4" max="8">
 
-            <span class="mt-2">Include in my password (select at least one option)</span>
+            <span class="mt-2">Include in my password (select at least one option):</span>
             <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
                 <input type="checkbox" class="btn-check" name="includeNumbers" id="btncheck1" autocomplete="off">
                 <label class="btn btn-outline-success text-light" for="btncheck1">Numbers</label>
