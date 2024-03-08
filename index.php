@@ -25,7 +25,9 @@ $newPassword = "";
 if (isset($_GET['inputNumber'])) {
     $inputNumber = $_GET['inputNumber'];
     $includeNumbers = $_GET['includeNumbers'];
-    $newPassword = generatePassword($inputNumber, $includeNumbers);
+    $includeLetters = $_GET['includeLetters'];
+    $includeSymbols = $_GET['includeSymbols'];
+    $newPassword = generatePassword($inputNumber, $includeNumbers, $includeLetters, $includeSymbols);
     $_SESSION['password'] = $newPassword;
     header("Location: ./display_password.php");
 }

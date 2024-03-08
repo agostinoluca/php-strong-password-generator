@@ -1,9 +1,15 @@
 <?php
-function generatePassword($inputNumber, $includeNumbers)
+function generatePassword($inputNumber, $includeNumbers, $includeLetters, $includeSymbols)
 {
     $characters = '';
     if ($includeNumbers) {
-        $characters .= '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&*+,-.:;<>?[@]^_~';
+        $characters .= '0123456789';
+    }
+    if ($includeLetters) {
+        $characters .= 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    }
+    if ($includeSymbols) {
+        $characters .= '!#$%&*+,-.:;<>?[@]^_~';
     }
     $newPassword = "";
     for ($i = 0; $i < $inputNumber; $i++) {
