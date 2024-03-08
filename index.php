@@ -44,10 +44,10 @@ require_once __DIR__ . '/html_head.php';
                 <input type="checkbox" class="btn-check" name="includeNumbers" id="btncheck1" autocomplete="off">
                 <label class="btn btn-outline-success text-light" for="btncheck1">Numbers</label>
 
-                <input type="checkbox" class="btn-check" name="includeNumbers" id="btncheck2" autocomplete="off">
+                <input type="checkbox" class="btn-check" name="includeWords" id="btncheck2" autocomplete="off">
                 <label class="btn btn-outline-success text-light" for="btncheck2">Words</label>
 
-                <input type="checkbox" class="btn-check" name="includeNumbers" id="btncheck3" autocomplete="off">
+                <input type="checkbox" class="btn-check" name="includeSymbols" id="btncheck3" autocomplete="off">
                 <label class="btn btn-outline-success text-light" for="btncheck3">Symbols</label>
             </div>
 
