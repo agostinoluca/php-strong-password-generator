@@ -40,15 +40,15 @@ if (isset($_GET['inputNumber'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 </head>
 
-<body>
+<body class="bg-secondary">
     <div class="container m-auto pt-5">
         <form action="" method="get" class="d-flex flex-column align-items-center gap-2">
-            <label for="inputNumber">Choose the length of your new password (4 to 8 characters)</label>
+            <label class="text-light" for="inputNumber">Choose the length of your new password (4 to 8 characters)</label>
             <input style="width: 50px;" type="number" id="inputNumber" name="inputNumber" min="4" max="8">
             <button class="btn btn-dark" type="submit">Generate password</button>
         </form>
-        <div class="d-flex flex-column align-items-center pt-5">
-            <p>Your new strong password:</p>
+        <div class="d-flex flex-column align-items-center mt-5 p-3 gap-2">
+            <span class="fw-bolder text-success-emphasis ">Your new strong password:</span>
             <h6 class="bg-success text-light p-2"><?php echo $newPassword ?></h6>
         </div>
     </div>
