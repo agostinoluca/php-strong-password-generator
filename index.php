@@ -47,10 +47,17 @@ if (isset($_GET['inputNumber'])) {
             <input style="width: 50px;" type="number" id="inputNumber" name="inputNumber" min="4" max="8">
             <button class="btn btn-dark" type="submit">Generate password</button>
         </form>
-        <div class="d-flex flex-column align-items-center mt-5 p-3 gap-2">
-            <span class="fw-bolder text-success-emphasis ">Your new strong password:</span>
-            <h6 class="bg-success text-light p-2"><?php echo $newPassword ?></h6>
-        </div>
+        <?php if (isset($_GET['inputNumber'])) : ?>
+
+            <div class="d-flex justify-content-center mt-5">
+                <div class="card text-bg-success mb-3" style="max-width: 18rem;">
+                    <div class="card-header text-dark text-center fw-bolder">Your new strong password:</div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><?php echo $newPassword ?></h5>
+                    </div>
+                </div>
+            </div>
+        <?php endif ?>
     </div>
 
 
