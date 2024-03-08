@@ -17,6 +17,7 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
 */
 
 // var_dump('FUNZIONO')
+session_start();
 require_once __DIR__ . '/functions.php';
 
 $newPassword = "";
@@ -24,6 +25,7 @@ $newPassword = "";
 if (isset($_GET['inputNumber'])) {
     $inputNumber = $_GET['inputNumber'];
     $newPassword = generatePassword($inputNumber);
+    $_SESSION['password'] = $newPassword;
 }
 ?>
 
@@ -41,9 +43,10 @@ if (isset($_GET['inputNumber'])) {
 </head>
 
 <body class="bg-secondary">
-    <div class="container m-auto pt-5">
-        <form action="" method="get" class="d-flex flex-column align-items-center gap-2">
-            <label class="text-light" for="inputNumber">Choose the length of your new password (4 to 8 characters)</label>
+    <div class="container m-auto pt-5 text-center">
+        <h1 class="text-light">Strong Password Generator</h1>
+        <form action="" method="get" class="d-flex flex-column align-items-center gap-2 pt-5 ">
+            <label for="inputNumber">Choose the length of your new password (4 to 8 characters)</label>
             <input style="width: 50px;" type="number" id="inputNumber" name="inputNumber" min="4" max="8">
             <button class="btn btn-dark" type="submit">Generate password</button>
         </form>
@@ -51,8 +54,8 @@ if (isset($_GET['inputNumber'])) {
 
             <div class="d-flex justify-content-center mt-5">
                 <div class="card text-bg-success mb-3" style="max-width: 18rem;">
-                    <div class="card-header text-dark text-center fw-bolder">Your new strong password:</div>
-                    <div class="card-body text-center">
+                    <div class="card-header text-dark fw-bolder">Your new strong password:</div>
+                    <div class="card-body">
                         <h5 class="card-title"><?php echo $newPassword ?></h5>
                     </div>
                 </div>
