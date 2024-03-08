@@ -38,7 +38,26 @@ require_once __DIR__ . '/html_head.php';
         <form action="" method="get" class="d-flex flex-column align-items-center gap-2 pt-5 ">
             <label for="inputNumber">Choose the length of your new password (4 to 8 characters)</label>
             <input style="width: 50px;" type="number" id="inputNumber" name="inputNumber" min="4" max="8">
-            <button class="btn btn-dark" type="submit">Generate password</button>
+
+            <span class="mt-2">Include in my password (select at least one option)</span>
+            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                <input type="checkbox" class="btn-check" name="includeNumbers" id="btncheck1" autocomplete="off">
+                <label class="btn btn-outline-success text-light" for="btncheck1">Numbers</label>
+
+                <input type="checkbox" class="btn-check" name="includeNumbers" id="btncheck2" autocomplete="off">
+                <label class="btn btn-outline-success text-light" for="btncheck2">Words</label>
+
+                <input type="checkbox" class="btn-check" name="includeNumbers" id="btncheck3" autocomplete="off">
+                <label class="btn btn-outline-success text-light" for="btncheck3">Symbols</label>
+            </div>
+
+            <div class="form-check pt-2">
+                <input class="form-check-input" type="checkbox" name="doNotIdenticalCharacters" id="doNotIdenticalCharacters" />
+                <label class="form-check-label text-light " for="doNotIdenticalCharacters"> Do not repeat identical characters </label>
+            </div>
+
+
+            <button class="btn btn-dark mt-4 " type="submit">Generate password</button>
         </form>
 
         <!-- <?php if (isset($_GET['inputNumber'])) : ?> -->
