@@ -17,17 +17,7 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
 */
 
 // var_dump('FUNZIONO')
-function generatePassword($inputNumber)
-{
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&*+,-.:;<>?[@]^_~';
-    $newPassword = "";
-    for ($i = 0; $i < $inputNumber; $i++) {
-        $randomIndex = rand(0, strlen($characters) - 1);
-        $randomCharacter = $characters[$randomIndex];
-        $newPassword .= $randomCharacter;
-    }
-    return $newPassword;
-}
+require_once __DIR__ . '/functions.php';
 
 $newPassword = "";
 
@@ -35,7 +25,6 @@ if (isset($_GET['inputNumber'])) {
     $inputNumber = $_GET['inputNumber'];
     $newPassword = generatePassword($inputNumber);
 }
-
 ?>
 
 
