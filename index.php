@@ -24,10 +24,10 @@ $newPassword = "";
 
 if (isset($_GET['inputNumber'])) {
     $inputNumber = $_GET['inputNumber'];
-    $includeNumbers = $_GET['includeNumbers'];
-    $includeLetters = $_GET['includeLetters'];
-    $includeSymbols = $_GET['includeSymbols'];
-    $doNotIdenticalCharacters = $_GET['doNotIdenticalCharacters'];
+    $includeNumbers = isset($_GET['includeNumbers']);
+    $includeLetters = isset($_GET['includeLetters']);
+    $includeSymbols = isset($_GET['includeSymbols']);
+    $doNotIdenticalCharacters = isset($_GET['doNotIdenticalCharacters']);
     $newPassword = generatePassword($inputNumber, $includeNumbers, $includeLetters, $includeSymbols, $doNotIdenticalCharacters);
     $_SESSION['password'] = $newPassword;
     header("Location: ./display_password.php");
