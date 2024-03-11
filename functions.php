@@ -14,7 +14,7 @@ function generatePassword($inputNumber, $includeNumbers, $includeLetters, $inclu
 
     $newPassword = "";
     if (strlen($characters) >= $inputNumber) {
-        while (strlen($newPassword) <= $inputNumber) {
+        while (strlen($newPassword) < $inputNumber) {
             $randomIndex = rand(0, strlen($characters) - 1);
             $randomCharacter = $characters[$randomIndex];
             if (!$doNotIdenticalCharacters || ($doNotIdenticalCharacters && !str_contains($newPassword, $randomCharacter))) {
@@ -22,6 +22,5 @@ function generatePassword($inputNumber, $includeNumbers, $includeLetters, $inclu
             }
         }
     }
-
     return $newPassword;
 }

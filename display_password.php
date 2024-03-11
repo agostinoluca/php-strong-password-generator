@@ -12,7 +12,7 @@ $newPassword = $_SESSION['password'];
                 <p>Please ensure you have filled in all required fields.</p>
             </div>
         <?php endif ?>
-        <?php if (strlen($newPassword) > 4) : ?>
+        <?php if (strlen($newPassword) >= 4) : ?>
             <div class="card text-bg-success mb-3">
                 <div class="card-header text-dark fw-bolder fs-4 ">Your new strong password:</div>
                 <div class="card-body">
